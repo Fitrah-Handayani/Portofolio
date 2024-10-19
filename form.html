@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Sign Up & Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FAF1E4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            background-color: #435334;
+            color: white;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+        input[type="reset"] {
+            background-color:#435334;
+            color: white;
+        }
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #9EB384;
+            cursor: pointer;
+        }
+        /* Styling untuk bagian scrollable */
+        .scrollable {
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container untuk Form -->
+    <div class="container">
+        <!-- Form Sign Up -->
+        <div id="signupForm">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="Email">Email:</label>
+                <input type="text" id="Email" name="Email" required>
+
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                
+                <label for="Password">Konfirmasi Password:</label>
+                <input type="password" id="Password" name="Password" required>
+                
+                <input type="submit" value="Sign Up">
+                <input type="reset" value="Reset">
+            </form>
+            <p class="toggle-link" onclick="toggleForm('login')">Sudah punya akun? Login di sini</p>
+        </div>
+
+        <!-- Form Login -->
+        <div id="loginForm" style="display:none;">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+            </form>
+            <p class="toggle-link" onclick="toggleForm('signup')">Belum punya akun? Sign Up di sini</p>
+        </div>
+    </div>
+
+    <!-- Penjelasan Scrollable tentang pembuatan form Sign Up & Login -->
+    <div class="scrollable">
+        <h2>Penjelasan dari Sintaks Sign Up & Login</h2>
+        <p>
+            <strong>&lt;form&gt;</strong>: Elemen ini digunakan untuk membuat form di HTML. Dalam kasus ini, ada dua form: satu untuk Sign Up dan satu lagi untuk Login.
+            <code>
+            &lt;form&gt;
+                &lt;label for="Email"&gt;Email:&lt;/label&gt;
+                &lt;input type="text" id="Email" name="Email" required&gt;
+                &lt;label for="newUsername"&gt;Username:&lt;/label&gt;
+                &lt;input type="text" id="newUsername" name="newUsername" required&gt;
+                &lt;label for="newPassword"&gt;Password:&lt;/label&gt;
+                &lt;input type="password" id="newPassword" name="newPassword" required&gt;
+                &lt;label for="Password"&gt;Konfirmasi Password:&lt;/label&gt;
+                &lt;input type="password" id="Password" name="Password" required&gt;
+                &lt;input type="submit" value="Sign Up"&gt;
+            &lt;/form&gt;
+            </code>
+        </p>
+        <p>
+            <strong>&lt;label&gt;</strong>: Digunakan untuk memberi label pada input. 
+            <code>&lt;label for="newUsername"&gt;Username:&lt;/label&gt;</code>
+        </p>
+        <p>
+            <strong>&lt;input&gt;</strong>: Ini adalah elemen input di form, yang memungkinkan pengguna memasukkan informasi. Jenisnya bisa teks, password, atau email.
+            <code>&lt;input type="text" id="newUsername" name="newUsername" required&gt;</code>
+        </p>
+        <p>
+            <strong>&lt;input type="submit"&gt;</strong>: Tombol submit digunakan untuk mengirim form.
+            <code>&lt;input type="submit" value="Sign Up"&gt;</code>
+        </p>
+        
+        <h2>Penjelasan syntax js agar bisa berpindah page</h2>
+        <p>
+            <strong>function toggleForm(formType)</strong>: Fungsi ini digunakan untuk mengubah tampilan antara form Login dan Sign Up.
+            <code>function toggleForm(formType) { ... }</code>
+        </p>
+        <p>
+            <strong>if (formType === 'login')</strong>: Kondisi ini memeriksa apakah tipe form yang akan ditampilkan adalah Login. Jika ya, maka form Sign Up akan disembunyikan, dan form Login akan ditampilkan.
+            <code>if (formType === 'login') { ... }</code>
+        </p>
+        <p>
+            <strong>event.preventDefault()</strong>: Digunakan untuk mencegah perilaku default dari form, yaitu mencegah halaman melakukan refresh saat form disubmit.
+            <code>event.preventDefault();</code>
+        </p>
+        <p>
+            <strong>localStorage.setItem()</strong>: Fungsi ini digunakan untuk menyimpan data di browser. Dalam konteks ini, username dan password yang dimasukkan oleh pengguna disimpan di localStorage.
+            <code>localStorage.setItem('username', newUsername);</code>
+        </p>
+        <p>
+            <strong>document.querySelector()</strong>: Digunakan untuk memilih elemen HTML berdasarkan selector yang diberikan. Pada kasus ini, elemen form Sign Up dan Login dipilih.
+            <code>document.querySelector('#signupForm form')</code>
+        </p>
+        <p>
+            <strong>alert()</strong>: Fungsi ini digunakan untuk menampilkan pesan dialog kepada pengguna. Misalnya, untuk memberitahukan bahwa registrasi berhasil atau login gagal.
+            <code>alert('Registrasi berhasil! Silakan login.');</code>
+        </p>
+        <p>
+            <strong>window.location.href</strong>: Digunakan untuk mengalihkan pengguna ke halaman lain setelah berhasil login. Dalam hal ini, pengguna akan dialihkan ke halaman <code>index.html</code>.
+            <code>window.location.href = "index.html";</code>
+        </p>
+        <p>
+            <strong>var storedUsername = localStorage.getItem('username')</strong>: Kode ini mengambil data username yang telah disimpan di localStorage untuk memvalidasi login.
+            <code>var storedUsername = localStorage.getItem('username');</code>
+        </p>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan form Login atau Sign Up
+        function toggleForm(formType) {
+            if (formType === 'login') {
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            } else {
+                document.getElementById('signupForm').style.display = 'block';
+                document.getElementById('loginForm').style.display = 'none';
+            }
+        }
+
+        // Event untuk menangani submit form Sign Up
+        document.querySelector('#signupForm form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form refresh halaman
+
+            // Simpan username dan password ke localStorage (simulasi)
+            var newUsername = document.getElementById('newUsername').value;
+            var newPassword = document.getElementById('newPassword').value;
+
+            localStorage.setItem('username', newUsername);
+            localStorage.setItem('password', newPassword);
+
+            alert('Registrasi berhasil! Silakan login.');
+            toggleForm('login'); // Alihkan ke form login
+        });
+
+        // Event untuk menangani submit form Login
+        document.querySelector('#loginForm form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form refresh halaman
+
+            // Ambil username dan password dari localStorage
+            var storedUsername = localStorage.getItem('username');
+            var storedPassword = localStorage.getItem('password');
+
+            var enteredUsername = document.getElementById('username').value;
+            var enteredPassword = document.getElementById('password').value;
+
+            // Validasi username dan password
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+                alert("Login berhasil!");
+                window.location.href = "index.html"; // Redirect ke halaman home
+            } else {
+                alert("Username atau password salah.");
+            }
+        });
+    </script>
+
+</body>
+</html>

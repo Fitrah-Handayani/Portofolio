@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Tutorial Membuat Tabel</title>
+    <style>
+        /* Styling untuk tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Menggabungkan border antar sel */
+        }
+        th, td {
+            border: 1px solid black; /* Menambahkan border pada setiap sel */
+            padding: 8px;
+            text-align: left; /* Menyelaraskan teks ke kiri */
+        }
+        th {
+            background-color: #9EB384; /* Memberikan warna latar pada header tabel */
+        }
+
+        /* Styling untuk bagian scrollable */
+        .scrollable {
+            max-height: 300px;
+            overflow-y: auto; /* Mengaktifkan scroll vertikal */
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Agar sintaks HTML tetap rapi */
+        }
+
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="table.html" class="nav-link active-link">Tabel</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="#contact" class="nav-link">Contact</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn">
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+    <br><br>
+    <br></br>
+
+    <h2>Tampilan Tabel</h2>
+
+    <!-- Membuat Tabel Sederhana -->
+    <table>
+        <thead>
+            <tr>
+                <th>NPM</th>  
+                <th>Nama</th>
+                <th>IPK Sem 1</th>
+                <th>IPK Sem 2</th>
+                <th>IPK Sem 3</th>
+                <th>IPK Sem 4</th>
+                <th>IPK Sem 5</th>
+                <th>IPK Sem 6</th>
+                <th>IPK Sem 7</th>
+                <th>IPK Sem 8</th>
+                <th>Jurusan</th>
+                <th>Fakultas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5220311017</td>
+                <td>Fitrah Handayani</td>
+                <td>3,65</td>
+                <td>3,80</td>
+                <td>3,63</td>
+                <td>3,86</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>522031100</td>
+                <td>Mia Anggreini</td>
+                <td>3,80</td>
+                <td>3,78</td>
+                <td>3,95</td>
+                <td>4,00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5220311022</td>
+                <td>Nassa Fadilla</td>
+                <td>3,70</td>
+                <td>3,85</td>
+                <td>3,76</td>
+                <td>3,87</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5220311034</td>
+                <td>Yesty Anggela</td>
+                <td>3,65</td>
+                <td>3,70</td>
+                <td>3,86</td>
+                <td>3,90</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5190411378</td>
+                <td>Denny Nur Rahman</td>
+                <td>3,55</td>
+                <td>3,70</td>
+                <td>3,85</td>
+                <td>3,80</td>
+                <td>3,89</td>
+                <td>4,00</td>
+                <td>3,97</td>
+                <td>3,90</td>
+                <td>Informatika</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="assets/js/main.js"></script>
+    <br>
+
+    <!-- Penjelasan Scrollable tentang pembuatan tabel -->
+    <h2>Tutorial Membuat Tabel HTML dan Penjelasan Sintaks</h2>
+    <div class="scrollable">
+        <h3>Penjelasan:</h3>
+        <p><strong>&lt;table&gt;</strong>: Elemen ini digunakan untuk membuat tabel di HTML terdapat 12 kolom dengan nama kolom NPM, Nama, IPK sem 1-8, jurusan dan fakultas.</p>
+        <code>
+        &lt;table&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;NPM&lt;/th&gt;
+                    &lt;th&gt;Nama&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 1&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 2&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 3&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 4&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 5&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 6&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 7&lt;/th&gt;
+                    &lt;th&gt;IPK Sem 8&lt;/th&gt;
+                    &lt;th&gt;Jurusan&lt;/th&gt;
+                    &lt;th&gt;Fakultas&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            <p><strong>&lt;table&gt;</strong>: syntax di bawah ini berisikan data yang akan menjadi isi dari tabel</p>
+                &lt;tr&gt;
+                    &lt;td&gt;5220311017&lt;/td&gt;
+                    &lt;td&gt;Fitrah Handayani&lt;/td&gt;
+                    &lt;td&gt;3.65&lt;/td&gt;
+                    &lt;td&gt;3.80&lt;/td&gt;
+                    &lt;td&gt;3.63&lt;/td&gt;
+                    &lt;td&gt;3.86&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;Sistem Informasi&lt;/td&gt;
+                    &lt;td&gt;Sains dan Teknologi&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+        </code>
+
+        <p><strong>&lt;thead&gt;</strong>: Elemen untuk mendefinisikan bagian header dari tabel (judul kolom).</p>
+        <p><strong>&lt;th&gt;</strong>: Elemen untuk mendefinisikan judul kolom pada tabel.</p>
+        <p><strong>&lt;tbody&gt;</strong>: Bagian dari tabel yang menampung data (isi baris).</p>
+        <p><strong>&lt;tr&gt;</strong>: Elemen untuk membuat baris baru di tabel.</p>
+        <p><strong>&lt;td&gt;</strong>: Elemen untuk mendefinisikan setiap sel data di dalam tabel.</p>
+    </div>
+</body>
+</html>
